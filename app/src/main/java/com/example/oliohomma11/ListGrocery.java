@@ -1,12 +1,11 @@
 package com.example.oliohomma11;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 public class ListGrocery {
     private static ListGrocery instance;
-    private final List<Grocery> groceryList;
+    private List<Grocery> groceryList;
 
     private ListGrocery() {
         groceryList = new ArrayList<>();
@@ -23,22 +22,35 @@ public class ListGrocery {
         groceryList.add(grocery);
     }
 
-    public Grocery getGroceryByName(String name) {
-        for (Grocery grocery : groceryList) {
-            if (grocery.getGroceryName().equals(name)) {
-                return grocery;
-            }
-        }
-        return null;
-    }
-
-
     public List<Grocery> getGroceries() {
         return groceryList;
     }
 
 
+
+    public void removeGrocery(String name) {
+        for (int i = 0; i < groceryList.size(); i++) {
+            if (groceryList.get(i).getName().equals(name)) {
+                groceryList.remove(i);
+                return;
+            }
+        }
+    }
+
+    public void updateGrocery(Grocery updatedGrocery) {
+        for (int i = 0; i < groceryList.size(); i++) {
+            if (groceryList.get(i).getName().equals(updatedGrocery.getName())) {
+                groceryList.set(i, updatedGrocery);
+                return;
+            }
+        }
+    }
+
+    public List<Grocery> getGroceryList() {
+        return groceryList;
+    }
 }
+
 
 
 

@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static RecyclerView rvGroceries;
-    private static GroceryListAdapter adapter;
+    public static GroceryListAdapter adapter;
     private ImageView imageAlphabet;
     private ImageView imageTime;
 

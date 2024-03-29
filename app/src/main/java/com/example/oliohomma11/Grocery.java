@@ -1,34 +1,32 @@
 package com.example.oliohomma11;
 
-
 import java.util.Date;
 
-
 public class Grocery {
-    private String groceryName;
-    private String groceryNote;
+    private String name;
+    private String note;
     private Date timestamp;
 
-    public Grocery(String groceryName, String groceryNote) {
-        this.groceryName = groceryName;
-        this.groceryNote = groceryNote;
+    public Grocery(String name, String note) {
+        this.name = name;
+        this.note = note;
         this.timestamp = new Date();
     }
 
-    public String getGroceryName() {
-        return groceryName;
+    public String getName() {
+        return name;
     }
 
-    public void setGroceryName(String groceryName) {
-        this.groceryName = groceryName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getGroceryNote() {
-        return groceryNote;
+    public String getNote() {
+        return note;
     }
 
-    public void setGroceryNote(String groceryNote) {
-        this.groceryNote = groceryNote;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public Date getTimestamp() {
@@ -39,6 +37,9 @@ public class Grocery {
         this.timestamp = timestamp;
     }
 }
+
+
+
 
 
 

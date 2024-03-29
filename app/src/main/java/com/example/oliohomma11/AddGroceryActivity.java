@@ -7,7 +7,9 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddGroceryActivity extends AppCompatActivity {
-    private EditText editGroceryName, editGroceryNote;
+    private EditText editGroceryName;
+
+    private EditText editGroceryNote;
     private Button buttonAddGrocery;
 
     @Override
