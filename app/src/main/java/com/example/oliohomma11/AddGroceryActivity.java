@@ -4,11 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Date;
 
 public class AddGroceryActivity extends AppCompatActivity {
     private EditText editGroceryName;
-
     private EditText editGroceryNote;
     private Button buttonAddGrocery;
 
@@ -26,21 +28,20 @@ public class AddGroceryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String textGroceryName = editGroceryName.getText().toString();
                 String textGroceryNote = editGroceryNote.getText().toString();
+                Date timestamp = new Date();
 
-                Grocery grocery = new Grocery(textGroceryName, textGroceryNote);
-
+                Grocery grocery = new Grocery(textGroceryName, textGroceryNote, timestamp);
 
                 ListGrocery.getInstance().addGrocery(grocery);
 
-
                 MainActivity.updateGroceryList();
-
 
                 finish();
             }
         });
     }
 }
+
 
 
 

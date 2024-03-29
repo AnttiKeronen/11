@@ -7,10 +7,10 @@ public class Grocery {
     private String note;
     private Date timestamp;
 
-    public Grocery(String name, String note) {
+    public Grocery(String name, String note, Date timestamp) {
         this.name = name;
         this.note = note;
-        this.timestamp = new Date();
+        this.timestamp = timestamp;
     }
 
     public String getName() {
@@ -37,6 +37,7 @@ public class Grocery {
         this.timestamp = timestamp;
     }
 }
+
 
 
 

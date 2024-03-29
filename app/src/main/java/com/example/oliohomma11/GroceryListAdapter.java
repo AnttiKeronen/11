@@ -5,8 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class GroceryListAdapter extends RecyclerView.Adapter<GroceryViewHolder> {
@@ -15,11 +13,9 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryViewHolder> 
 
     public interface OnItemClickListener {
         void onDeleteClick(int position);
-        void onEditClick(int position);
-    }
 
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
+        void onEditClick(int position);
+
     }
 
     public GroceryListAdapter(List<Grocery> groceryList) {
@@ -59,23 +55,7 @@ public class GroceryListAdapter extends RecyclerView.Adapter<GroceryViewHolder> 
         return groceryList.size();
     }
 
-    public void sortGroceriesByAlphabet() {
-        Collections.sort(groceryList, (grocery1, grocery2) ->
-                grocery1.getName().compareToIgnoreCase(grocery2.getName()));
-        notifyDataSetChanged();
-    }
 
-    public void sortGroceriesByTime() {
-        Collections.sort(groceryList, (grocery1, grocery2) ->
-                grocery1.getTimestamp().compareTo(grocery2.getTimestamp()));
-        notifyDataSetChanged();
-    }
-
-    public void updateGroceries(List<Grocery> groceries) {
-        groceryList.clear();
-        groceryList.addAll(groceries);
-        notifyDataSetChanged();
-    }
 }
 
 

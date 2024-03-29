@@ -1,11 +1,13 @@
 package com.example.oliohomma11;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class ListGrocery {
     private static ListGrocery instance;
-    private List<Grocery> groceryList;
+    private final List<Grocery> groceryList;
 
     private ListGrocery() {
         groceryList = new ArrayList<>();
@@ -21,12 +23,6 @@ public class ListGrocery {
     public void addGrocery(Grocery grocery) {
         groceryList.add(grocery);
     }
-
-    public List<Grocery> getGroceries() {
-        return groceryList;
-    }
-
-
 
     public void removeGrocery(String name) {
         for (int i = 0; i < groceryList.size(); i++) {
@@ -46,10 +42,41 @@ public class ListGrocery {
         }
     }
 
-    public List<Grocery> getGroceryList() {
+    public List<Grocery> getGroceries() {
         return groceryList;
     }
+
+    public void sortGroceriesByAlphabet() {
+        Collections.sort(groceryList, new Comparator<Grocery>() {
+            @Override
+            public int compare(Grocery grocery1, Grocery grocery2) {
+                return grocery1.getName().compareToIgnoreCase(grocery2.getName());
+            }
+        });
+    }
+
+    public void sortGroceriesByTime() {
+        Collections.sort(groceryList, new Comparator<Grocery>() {
+            @Override
+            public int compare(Grocery grocery1, Grocery grocery2) {
+                return grocery1.getTimestamp().compareTo(grocery2.getTimestamp());
+            }
+        });
+    }
+
+    public Grocery getGroceryByName(String name) {
+        for (Grocery grocery : groceryList) {
+            if (grocery.getName().equals(name)) {
+                return grocery;
+            }
+        }
+        return null;
+    }
+
 }
+
+
+
 
 
 
