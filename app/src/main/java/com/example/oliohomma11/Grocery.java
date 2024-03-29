@@ -3,29 +3,46 @@ package com.example.oliohomma11;
 
 import java.util.Date;
 
+
 public class Grocery {
-    private final String GroceryName;
-    private final String GroceryNote;
-    private final Date timestamp;
+    private String groceryName;
+    private String groceryNote;
+    private Date timestamp;
 
     public Grocery(String groceryName, String groceryNote) {
-        this.GroceryName = groceryName;
-        this.GroceryNote = groceryNote;
+        this.groceryName = groceryName;
+        this.groceryNote = groceryNote;
         this.timestamp = new Date();
     }
 
     public String getGroceryName() {
-        return GroceryName;
+        return groceryName;
+    }
+
+    public void setGroceryName(String groceryName) {
+        this.groceryName = groceryName;
     }
 
     public String getGroceryNote() {
-        return GroceryNote;
+        return groceryNote;
+    }
+
+    public void setGroceryNote(String groceryNote) {
+        this.groceryNote = groceryNote;
     }
 
     public Date getTimestamp() {
         return timestamp;
     }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
+    }
 }
+
+
+
+
 
 
 
